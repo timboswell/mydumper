@@ -41,4 +41,4 @@ if [[ ! -d "${BACKUP_DIR}" ]]; then
    mkdir -p "${BACKUP_DIR}"
 fi
 
-exec mydumper -h ${DB_HOST} -u ${DB_USER} -p ${DB_PASSWORD} -B ${DB_NAME} -o ${BACKUP_DIR}
+exec mydumper --compress -h ${DB_HOST} -u ${DB_USER} -p ${DB_PASSWORD} -B ${DB_NAME} -o ${BACKUP_DIR}/${DB_NAME}-$(date +%d-%b-%y)
