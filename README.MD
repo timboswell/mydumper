@@ -21,6 +21,10 @@ docker-compose up
 
 The container for mydumper will start, create the backup then exit with status 0. (You can see the exit code with `docker ps` and logs with `docker logs <CONTAINER>`.
 
+The backups are created with --compress and in the following folder pattern:
+
+<BACKUP_FOLDER>/<DB_NAME>-<DATE>
+
 
 Needed Environment Variables
 ----------------------------
