@@ -15,5 +15,6 @@ RUN cd mydumper && \
 FROM alpine:3.6
 RUN apk add --no-cache mariadb-client-libs glib bash
 COPY --from=builder /usr/src/mydumper/mydumper /usr/bin/
+COPY --from=builder /usr/src/mydumper/myloader /usr/bin/
 COPY docker-entrypoint.sh /entrypoint
 ENTRYPOINT ["bash","-x","/entrypoint"]
